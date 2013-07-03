@@ -1,24 +1,37 @@
-# Rescuegroups
+This is Ruby wrapper for Rescuegroups API
+http://support.rescuegroups.org:8091/display/userguide/HTTP+API
 
-TODO: Write a gem description
-
-## Installation
-
-Add this line to your application's Gemfile:
-
-    gem 'rescuegroups'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install rescuegroups
+For now, as gem is not yet complete, please clone/fork the repo
+and bundle using the :path param in your Gemfile.
 
 ## Usage
 
-TODO: Write usage instructions here
+First setup your api key
+
+    Rescuegroups.configure do |config|
+      config.api_key = 'ABCD'
+    end
+    
+Then create a client anywhere with object_type and object_action attributes.
+Your snake_case symbols are automatically camelcased within.
+
+    client = Rescuegroups::Client.new :object_type => "animals", :object_action => "publicSearch"
+
+Add filters. For example to search for an animal with animalID as 1234
+  
+    client.filter 'animalID', :eq, "1234"
+    client.filter 'animalStatus', :eq, "Available" # Not required but adviced
+
+Specify what filters you need as an array
+
+    client.fields ['animalName', 'animalID', 'animalBreed']
+
+Run the query and get the json
+  
+    response = client.query
+
+For available object type and object actions refer to 
+http://support.rescuegroups.org:8091/display/userguide/HTTP+API+object+definitions
 
 ## Contributing
 
