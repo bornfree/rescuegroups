@@ -33,7 +33,7 @@ module Rescuegroups
       raise ArgumentError, "Please provide object_type and object_action" if (self.object_type == nil or self.object_action == nil)
     end
 
-    def filter(field_name, operation, criteria)
+    def set_filter(field_name, operation, criteria)
 
       filter ={ :field_name => field_name.to_s.split("_").each_with_index {|part,i| part.capitalize! unless i == 0}.join,
                 :operation => OPERATIONS[operation],
@@ -41,8 +41,16 @@ module Rescuegroups
       self.search["search"]["filters"] << camelize(filter)
     end
 
-    def fields(fields)
+    def clear_filters
+      self.search["search"]["filters"] = []
+    end
+
+    def set_fields(fields)
       self.search["search"]["fields"] = fields
+    end
+
+    def clear_fields
+      self.search["search"]["fields"] = []
     end
 
     def query

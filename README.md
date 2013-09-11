@@ -19,14 +19,26 @@ client = Rescuegroups::Client.new :object_type => "animals", :object_action => "
 ```
 Add filters. For example to search for an animal with animalID as 1234
 ```ruby
-client.filter 'animalID', :eq, "1234"
-client.filter 'animalStatus', :eq, "Available" # Not required but adviced
+client.set_filter 'animalID', :eq, "1234"
+client.set_filter 'animalStatus', :eq, "Available" # Not required but adviced
 ```
-Specify what filters you need as an array
+
+To clear all filters do
 ```ruby
-client.fields ['animalName', 'animalID', 'animalBreed']
+client.clear_filters
 ```
-Run the query and get the json
+
+Specify the fields you need as an array
+```ruby
+client.set_fields ['animalName', 'animalID', 'animalBreed']
+```
+
+To clear all fields do
+```ruby
+client.clear_fields
+```
+
+Then, run the query and get the json
 ```ruby  
 response = client.query
 ```
