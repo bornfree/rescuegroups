@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Rescuegroups::VERSION
   spec.authors       = ["bornfree"]
   spec.email         = ["harsha.xg@gmail.com"]
-  spec.description   = "Ruby client for Rescuegroups API"
-  spec.summary       = "Same as above"
-  spec.homepage      = ""
+  spec.description   = "Ruby wrapper for Rescuegroups API"
+  spec.summary       = "Ruby wrapper for talking to the Rescuegroups API"
+  spec.homepage      = "https://github.com/bornfree/rescuegroups"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)

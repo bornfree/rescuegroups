@@ -1,8 +1,11 @@
 This is Ruby wrapper for Rescuegroups API
 http://support.rescuegroups.org:8091/display/userguide/HTTP+API
 
-For now, as gem is not yet complete, please clone/fork the repo
-and bundle using the :path param in your Gemfile.
+## Installation
+Add to your Gemfile
+```ruby
+gem 'rescuegroups'
+```
 
 ## Usage
 
