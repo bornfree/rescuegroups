@@ -72,7 +72,7 @@ module Rescuegroups
       self.values["values"] << camelize(fields)
     end
 
-    def clear_value_fields(fields)
+    def clear_value_fields
       self.values["values"] = []
     end
 
