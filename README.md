@@ -23,7 +23,7 @@ client = Rescuegroups::Client.new :object_type => "animals", :object_action => "
 
 If you wish to perform elevated actions like add or edit animal you will have to login.
 ```ruby
-client.login(:username => "john", :password => "doe", :user_account => "0")
+client.login(:username => "john", :password => "doe", :account_number => "0")
 ```
 This will attach token and tokenHash to further requests
 
