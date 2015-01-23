@@ -23,4 +23,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "curb"
   spec.add_development_dependency "json"
   spec.add_development_dependency "pry-rails"
+  spec.add_development_dependency "minitest"
 end

@@ -1,6 +1,6 @@
 require 'helper'
 
-describe 'client' do 
+describe 'client' do
 
   describe '.api_key' do
     it 'should be able to set api key when provided' do
@@ -19,10 +19,9 @@ describe 'client' do
 
     it 'should run a query and return something' do
       client = Rescuegroups::Client.new :object_type => "animals", :object_action => "define"
-      client.filter :age, :lt, 5
+      client.set_search_filter :age, :lt, 5
       client.query != nil
-    end 
-
-end
+    end
+  end
 
 end
